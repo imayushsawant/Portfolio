@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Twitter, Mail, ArrowDown, Download } from 'lucide-react'
+import { Github, Linkedin, Twitter, ArrowDown, Download, type LucideIcon } from 'lucide-react'
 
 const ROLES = [
   'Full Stack Developer',
@@ -11,10 +11,18 @@ const ROLES = [
   'Problem Solver',
 ]
 
-const SOCIAL = [
+type SocialLink = {
+  href: string
+  label: string
+  icon?: LucideIcon
+  iconPath?: string
+}
+
+const SOCIAL: SocialLink[] = [
   { icon: Github, href: 'https://github.com/imayushsawant', label: 'GitHub' },
   { icon: Linkedin, href: 'https://www.linkedin.com/in/sawant-ayush/', label: 'LinkedIn' },
   { icon: Twitter, href: 'https://x.com/AyushSawant13', label: 'Twitter' },
+  { iconPath: '/hashnode-icon.svg', href: 'https://blog.ayushsawant.dev/', label: 'Hashnode' },
 ]
 
 export default function Hero() {
@@ -157,7 +165,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 1 }}
           className="flex items-center gap-4"
         >
-          {SOCIAL.map(({ icon: Icon, href, label }, i) => (
+          {SOCIAL.map(({ icon: Icon, iconPath, href, label }, i) => (
             <motion.a
               key={label}
               href={href}
@@ -176,7 +184,27 @@ export default function Hero() {
                 background: 'var(--bg-3)',
               }}
             >
-              <Icon size={16} />
+              {Icon ? (
+                <Icon size={16} />
+              ) : (
+                <span
+                  aria-hidden="true"
+                  className="block"
+                  style={{
+                    width: 16,
+                    height: 16,
+                    backgroundColor: 'var(--text-dim)',
+                    maskImage: `url(${iconPath})`,
+                    maskRepeat: 'no-repeat',
+                    maskPosition: 'center',
+                    maskSize: 'contain',
+                    WebkitMaskImage: `url(${iconPath})`,
+                    WebkitMaskRepeat: 'no-repeat',
+                    WebkitMaskPosition: 'center',
+                    WebkitMaskSize: 'contain',
+                  }}
+                />
+              )}
             </motion.a>
           ))}
         </motion.div>

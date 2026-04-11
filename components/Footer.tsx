@@ -1,9 +1,17 @@
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react'
+import { Github, Linkedin, Twitter, type LucideIcon } from 'lucide-react'
 
-const LINKS = [
+type SocialLink = {
+  href: string
+  label: string
+  icon?: LucideIcon
+  iconPath?: string
+}
+
+const LINKS: SocialLink[] = [
   { icon: Github, href: 'https://github.com/imayushsawant', label: 'GitHub' },
   { icon: Linkedin, href: 'https://www.linkedin.com/in/sawant-ayush/', label: 'LinkedIn' },
   { icon: Twitter, href: 'https://x.com/AyushSawant13', label: 'Twitter' },
+  { iconPath: '/hashnode-icon.svg', href: 'https://blog.ayushsawant.dev/', label: 'Hashnode' },
 ]
 
 export default function Footer() {
@@ -27,7 +35,7 @@ export default function Footer() {
 
         {/* Socials */}
         <div className="flex items-center gap-3">
-          {LINKS.map(({ icon: Icon, href, label }) => (
+          {LINKS.map(({ icon: Icon, iconPath, href, label }) => (
             <a
               key={label}
               href={href}
@@ -37,7 +45,27 @@ export default function Footer() {
               className="p-1.5 transition-all duration-200 hover:opacity-60"
               style={{ color: 'var(--text-dim)' }}
             >
-              <Icon size={15} />
+              {Icon ? (
+                <Icon size={15} />
+              ) : (
+                <span
+                  aria-hidden="true"
+                  className="block"
+                  style={{
+                    width: 15,
+                    height: 15,
+                    backgroundColor: 'var(--accent)',
+                    maskImage: `url(${iconPath})`,
+                    maskRepeat: 'no-repeat',
+                    maskPosition: 'center',
+                    maskSize: 'contain',
+                    WebkitMaskImage: `url(${iconPath})`,
+                    WebkitMaskRepeat: 'no-repeat',
+                    WebkitMaskPosition: 'center',
+                    WebkitMaskSize: 'contain',
+                  }}
+                />
+              )}
             </a>
           ))}
         </div>

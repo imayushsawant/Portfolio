@@ -2,12 +2,20 @@
 
 import { useState } from 'react'
 import SectionReveal from '@/components/SectionReveal'
-import { Send, Mail, Github, Linkedin, Twitter } from 'lucide-react'
+import { Send, Github, Linkedin, Twitter, type LucideIcon } from 'lucide-react'
 
-const SOCIALS = [
+type SocialLink = {
+  label: string
+  href: string
+  icon?: LucideIcon
+  iconPath?: string
+}
+
+const SOCIALS: SocialLink[] = [
   { icon: Github, label: 'GitHub', href: 'https://github.com/imayushsawant' },
   { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/sawant-ayush/' },
   { icon: Twitter, label: 'Twitter / X', href: 'https://x.com/AyushSawant13' },
+  { iconPath: '/hashnode-icon.svg', label: 'Hashnode', href: 'https://blog.ayushsawant.dev/' },
 ]
 
 export default function Contact() {
@@ -101,7 +109,7 @@ export default function Contact() {
 
           <SectionReveal delay={0.2}>
             <div className="flex flex-col gap-3">
-              {SOCIALS.map(({ icon: Icon, label, href }) => (
+              {SOCIALS.map(({ icon: Icon, iconPath, label, href }) => (
                 <a
                   key={label}
                   href={href}
@@ -114,7 +122,27 @@ export default function Contact() {
                     className="p-2 rounded-lg"
                     style={{ background: 'var(--accent-dim)' }}
                   >
-                    <Icon size={14} style={{ color: 'var(--accent)' }} />
+                    {Icon ? (
+                      <Icon size={14} style={{ color: 'var(--accent)' }} />
+                    ) : (
+                      <span
+                        aria-hidden="true"
+                        className="block"
+                        style={{
+                          width: 14,
+                          height: 14,
+                          backgroundColor: 'var(--accent)',
+                          maskImage: `url(${iconPath})`,
+                          maskRepeat: 'no-repeat',
+                          maskPosition: 'center',
+                          maskSize: 'contain',
+                          WebkitMaskImage: `url(${iconPath})`,
+                          WebkitMaskRepeat: 'no-repeat',
+                          WebkitMaskPosition: 'center',
+                          WebkitMaskSize: 'contain',
+                        }}
+                      />
+                    )}
                   </div>
                   <span className="text-sm group-hover:text-[var(--accent)] transition-colors" style={{ color: 'var(--text-dim)' }}>
                     {label}
