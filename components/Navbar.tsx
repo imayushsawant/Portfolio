@@ -9,7 +9,6 @@ const NAV_LINKS = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
-  { label: 'GitHub', href: '#github' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -51,7 +50,7 @@ export default function Navbar() {
             style={{ color: 'var(--text)' }}
           >
             <span style={{ color: 'var(--accent)' }}>A</span>yush
-            <span style={{ color: 'var(--accent)' }}>.</span>
+            <span style={{ color: 'var(--accent)' }}>.dev</span>
           </button>
 
           {/* Desktop Nav */}

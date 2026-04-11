@@ -1,13 +1,19 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import SectionReveal from '@/components/SectionReveal'
 import { Dumbbell, MapPin, Code2, Zap } from 'lucide-react'
 
-const STATS = [
+const STATS_BASE = [
   { label: 'Projects Built', value: '5+' },
   { label: 'Technologies', value: '15+' },
   { label: 'CGPA', value: '8.89' },
-  { label: 'System Design', value: 'Learning' }
+]
+
+const CYCLING_OPTIONS = [
+  { label: 'System Design', value: 'Learning' },
+  { label: 'Full Stack', value: 'Mastering' },
 ]
 
 const TRAITS = [
@@ -18,6 +24,17 @@ const TRAITS = [
 ]
 
 export default function About() {
+  const [cycleIdx, setCycleIdx] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCycleIdx((prev) => (prev + 1) % CYCLING_OPTIONS.length)
+    }, 3500)
+    return () => clearInterval(interval)
+  }, [])
+
+  const STATS = [...STATS_BASE, CYCLING_OPTIONS[cycleIdx]]
+
   return (
     <section
       id="about"
@@ -81,7 +98,7 @@ export default function About() {
         {/* Right — stats grid */}
         <SectionReveal delay={0.15} direction="right">
           <div className="grid grid-cols-2 gap-4">
-            {STATS.map(({ label, value }) => (
+            {STATS_BASE.map(({ label, value }) => (
               <div
                 key={label}
                 className="project-card p-6 flex flex-col gap-1"
@@ -97,6 +114,28 @@ export default function About() {
                 </span>
               </div>
             ))}
+            <div className="project-card p-6 flex flex-col gap-1">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={cycleIdx}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.5 }}
+                  className="flex flex-col gap-1"
+                >
+                  <span
+                    className="font-display text-3xl font-bold"
+                    style={{ color: 'var(--accent)' }}
+                  >
+                    {CYCLING_OPTIONS[cycleIdx].value}
+                  </span>
+                  <span className="text-xs" style={{ color: 'var(--text-dim)' }}>
+                    {CYCLING_OPTIONS[cycleIdx].label}
+                  </span>
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </div>
 
           {/* Terminal snippet */}

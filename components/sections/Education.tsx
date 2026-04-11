@@ -9,7 +9,7 @@ export default function Education() {
       <SectionReveal>
         <div className="flex items-center gap-3 mb-12">
           <span className="text-xs font-mono tracking-widest uppercase" style={{ color: 'var(--accent)' }}>
-            05
+            04
           </span>
           <span className="flex-1 h-px" style={{ background: 'var(--border)' }} />
           <span className="text-xs font-mono tracking-widest uppercase" style={{ color: 'var(--text-dim)' }}>

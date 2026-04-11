@@ -4,7 +4,6 @@ import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import Navbar from '@/components/Navbar'
 import ScrollProgress from '@/components/ScrollProgress'
-import MusicPlayer from '@/components/MusicPlayer'
 
 // Display font — editorial, premium feel
 const playfair = Playfair_Display({
@@ -47,12 +46,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
       className={`${playfair.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="font-body bg-night text-ice antialiased overflow-x-hidden">
+      <body className="font-body antialiased overflow-x-hidden">
         <ThemeProvider>
           <ScrollProgress />
           <Navbar />
           <main>{children}</main>
-          <MusicPlayer />
         </ThemeProvider>
       </body>
     </html>

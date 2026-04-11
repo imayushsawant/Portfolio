@@ -15,7 +15,6 @@ const SOCIAL = [
   { icon: Github, href: 'https://github.com/imayushsawant', label: 'GitHub' },
   { icon: Linkedin, href: 'https://www.linkedin.com/in/sawant-ayush/', label: 'LinkedIn' },
   { icon: Twitter, href: 'https://x.com/AyushSawant13', label: 'Twitter' },
-  { icon: Mail, href: 'mailto:ayushvsawant@gmail.com', label: 'Email' },
 ]
 
 export default function Hero() {

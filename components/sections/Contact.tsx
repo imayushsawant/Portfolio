@@ -8,23 +8,67 @@ const SOCIALS = [
   { icon: Github, label: 'GitHub', href: 'https://github.com/imayushsawant' },
   { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/sawant-ayush/' },
   { icon: Twitter, label: 'Twitter / X', href: 'https://x.com/AyushSawant13' },
-  { icon: Mail, label: 'Email', href: 'mailto:ayushvsawant@gmail.com' },
 ]
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
-  const [sent, setSent] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [feedback, setFeedback] = useState('')
+  const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT
 
   const handle = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const handleSubmit = () => {
-    // UI only — wire up a backend / EmailJS / Formspree later
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
     if (!form.name || !form.email || !form.message) return
-    setSent(true)
-    setForm({ name: '', email: '', message: '' })
-    setTimeout(() => setSent(false), 4000)
+
+    if (!endpoint) {
+      setStatus('error')
+      setFeedback('Form endpoint not configured. Add NEXT_PUBLIC_FORMSPREE_ENDPOINT in .env.local.')
+      return
+    }
+
+    setStatus('sending')
+    setFeedback('')
+
+    try {
+      const payload = new FormData()
+      payload.append('name', form.name)
+      payload.append('email', form.email)
+      payload.append('message', form.message)
+
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: payload,
+      })
+
+      if (!res.ok) {
+        const data = await res
+          .json()
+          .catch(() => ({} as { error?: string; errors?: Array<{ message?: string }> }))
+        const providerMessage = data?.errors?.[0]?.message
+        throw new Error(providerMessage || data?.error || `Failed to send message (${res.status})`)
+      }
+
+      setStatus('sent')
+      setFeedback('Message sent successfully. I will get back to you soon.')
+      setForm({ name: '', email: '', message: '' })
+      setTimeout(() => {
+        setStatus('idle')
+        setFeedback('')
+      }, 4500)
+    } catch (error) {
+      setStatus('error')
+      setFeedback(
+        error instanceof Error
+          ? error.message
+          : 'Something went wrong. Please email me directly instead.'
+      )
+    }
   }
 
   return (
@@ -32,7 +76,7 @@ export default function Contact() {
       <SectionReveal>
         <div className="flex items-center gap-3 mb-12">
           <span className="text-xs font-mono tracking-widest uppercase" style={{ color: 'var(--accent)' }}>
-            06
+            05
           </span>
           <span className="flex-1 h-px" style={{ background: 'var(--border)' }} />
           <span className="text-xs font-mono tracking-widest uppercase" style={{ color: 'var(--text-dim)' }}>
@@ -87,7 +131,7 @@ export default function Contact() {
             className="rounded-xl p-6"
             style={{ background: 'var(--bg-2)', border: '1px solid var(--border)' }}
           >
-            <div className="flex flex-col gap-4">
+            <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
               <div>
                 <label className="text-xs mb-1.5 block font-medium" style={{ color: 'var(--text-dim)' }}>
                   Name
@@ -127,11 +171,28 @@ export default function Contact() {
                 />
               </div>
 
-              <button onClick={handleSubmit} className="btn-primary self-start">
+              <button
+                type="submit"
+                disabled={status === 'sending'}
+                className="btn-primary self-start disabled:opacity-70 disabled:cursor-not-allowed"
+              >
                 <Send size={14} />
-                {sent ? 'Message Sent! ✓' : 'Send Message'}
+                {status === 'sending'
+                  ? 'Sending...'
+                  : status === 'sent'
+                    ? 'Message Sent!'
+                    : 'Send Message'}
               </button>
-            </div>
+
+              {feedback && (
+                <p
+                  className="text-xs"
+                  style={{ color: status === 'error' ? '#ef4444' : 'var(--text-dim)' }}
+                >
+                  {feedback}
+                </p>
+              )}
+            </form>
           </div>
         </SectionReveal>
       </div>

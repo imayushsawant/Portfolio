@@ -10,9 +10,9 @@ const PROJECTS = [
     title: 'Cursor UI Clone',
     description:
       'A frontend clone of the Cursor AI editor interface focusing on replicating modern developer tooling UI/UX with clean layout, responsiveness, and interactive elements.',
-    tech: ['React', 'Next.js', 'Tailwind CSS'],
-    github: '#',
-    demo: '#',
+    tech: ['HTML', 'CSS'],
+    github: 'https://github.com/imayushsawant/Cursor-clone',
+    demo: 'https://imayushsawant.github.io/Cursor-clone/',
     featured: true,
   },
   {
@@ -20,9 +20,9 @@ const PROJECTS = [
     title: 'Mintlify UI Clone',
     description:
       'A documentation-style UI clone inspired by Mintlify, built to practice structured layouts, navigation systems, and developer-friendly documentation design.',
-    tech: ['Next.js', 'Tailwind CSS'],
-    github: '#',
-    demo: '#',
+    tech: ['HTML', 'CSS'],
+    github: 'https://github.com/imayushsawant/Mintlify-clone',
+    demo: 'https://imayushsawant.github.io/Mintlify-clone/',
     featured: true,
   },
   {
@@ -30,18 +30,18 @@ const PROJECTS = [
     title: 'Kanban Board App',
     description:
       'A task management interface with drag-and-drop style workflow, focused on UI state handling and component structuring.',
-    tech: ['React', 'TypeScript'],
-    github: '#',
+    tech: ['HTML', 'CSS', 'JAVASCRIPT'],
+    github: 'https://github.com/imayushsawant/learning-lab/tree/main/dom%20projects',
     demo: null,
     featured: false,
   },
   {
     number: '04',
-    title: 'Todo App',
+    title: 'Colour Palette Generator',
     description:
-      'A clean and minimal task management app built to reinforce core frontend concepts and state management.',
-    tech: ['JavaScript', 'React'],
-    github: '#',
+      'This is a minimalist HEX palette tool powered by pure Vanilla JavaScript.',
+    tech: ['HTML', 'CSS', 'JAVASCRIPT'],
+    github: 'https://github.com/imayushsawant/learning-lab/tree/main/dom%20projects',
     demo: null,
     featured: false,
   },

@@ -38,7 +38,6 @@ portfolio/
 │   ├── ThemeProvider.tsx   # Dark/light mode with localStorage
 │   ├── Navbar.tsx          # Sticky nav, mobile menu, theme toggle
 │   ├── ScrollProgress.tsx  # Accent-colored scroll progress bar
-│   ├── MusicPlayer.tsx     # Music widget (play/pause, volume)
 │   ├── SectionReveal.tsx   # Scroll-triggered reveal animations
 │   ├── Footer.tsx          # Footer with social links
 │   └── sections/
@@ -46,12 +45,10 @@ portfolio/
 │       ├── About.tsx       # Bio, stats, terminal snippet
 │       ├── Skills.tsx      # Tech stack grouped by category
 │       ├── Projects.tsx    # Project cards with links
-│       ├── GitHub.tsx      # GitHub stats & pinned repos
 │       ├── Education.tsx   # Education card
 │       └── Contact.tsx     # Contact form + social links
 ├── public/
 │   ├── resume.pdf          # ← Add your resume here
-│   └── somewhere-only-we-know.mp3  # ← Add music file here
 ```
 
 ---
@@ -74,19 +71,24 @@ Fonts:
 
 ---
 
-## 🎵 Background Music
-
-1. Download "Somewhere Only We Know" by Keane as an `.mp3`
-2. Place it at `public/somewhere-only-we-know.mp3`
-3. The player will appear in the bottom-left corner — it **never autoplays**
-
-Volume and mute preferences are saved to `localStorage`.
-
----
-
 ## 📄 Resume
 
 Place your resume PDF at `public/resume.pdf`. The "Download Resume" button in the navbar and hero will trigger a direct download.
+
+---
+
+## ✉️ Contact Form (Formspree)
+
+This project sends contact form submissions directly to Formspree.
+
+1. Create a form at Formspree and copy your endpoint URL
+2. Copy `.env.example` to `.env.local`
+3. Set `NEXT_PUBLIC_FORMSPREE_ENDPOINT` in `.env.local`
+4. Restart the dev server
+
+Notes:
+- Example endpoint format: `https://formspree.io/f/your-form-id`
+- All enquiries can be viewed in your Formspree dashboard
 
 ---
 
@@ -94,7 +96,6 @@ Place your resume PDF at `public/resume.pdf`. The "Download Resume" button in th
 
 - **Update links**: Edit `components/Navbar.tsx` and section files
 - **Add projects**: Edit the `PROJECTS` array in `components/sections/Projects.tsx`
-- **Update GitHub username**: Change `imayushsawant` in `components/sections/GitHub.tsx`
 - **Change accent color**: Update `--accent` in `app/globals.css`
 
 ---
