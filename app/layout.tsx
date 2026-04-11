@@ -46,6 +46,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
       className={`${playfair.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
     >
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body className="font-body antialiased overflow-x-hidden">
         <ThemeProvider>
           <ScrollProgress />
