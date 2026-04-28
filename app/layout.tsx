@@ -27,13 +27,13 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Ayush Sawant — Full Stack Developer',
+  title: 'Ayush Sawant Full Stack Developer',
   description:
     'Full-Stack MERN Developer building high-performance, utility-driven web applications. Currently focused on mastering scalable system architecture.',
   keywords: ['Ayush Sawant', 'Full Stack Developer', 'MERN', 'React', 'Next.js', 'Portfolio'],
   authors: [{ name: 'Ayush Sawant' }],
   openGraph: {
-    title: 'Ayush Sawant — Full Stack Developer',
+    title: 'Ayush Sawant Full Stack Developer',
     description: 'A coder by day, problem-solver by night',
     type: 'website',
   },
