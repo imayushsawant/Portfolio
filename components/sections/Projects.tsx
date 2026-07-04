@@ -7,12 +7,12 @@ import SectionReveal from '@/components/SectionReveal'
 const PROJECTS = [
   {
     number: '01',
-    title: 'Cursor UI Clone',
+    title: 'Atten-Dance',
     description:
-      'A frontend clone of the Cursor AI editor interface focusing on replicating modern developer tooling UI/UX with clean layout, responsiveness, and interactive elements.',
+      'AttenDance is an intelligent attendance management platform designed to help students stay on top of their academics. It goes beyond simple attendance tracking by providing meaningful insights, safe skip calculations, recovery planning, and semester-wise organization to make informed decisions throughout the semester.',
     tech: ['HTML', 'CSS'],
-    github: 'https://github.com/imayushsawant/Cursor-clone',
-    demo: 'https://imayushsawant.github.io/Cursor-clone/',
+    github: 'https://github.com/imayushsawant/atten-dance',
+    demo: 'https://atten-dance.ayushsawant.dev/',
     featured: true,
   },
   {
