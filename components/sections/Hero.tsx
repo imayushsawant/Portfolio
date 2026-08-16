@@ -152,7 +152,7 @@ export default function Hero() {
           >
             View Projects
           </button>
-          <a href="/resume.pdf" download className="btn-outline">
+          <a href="/Ayush_Sawant_Resume.pdf" download className="btn-outline">
             <Download size={14} />
             Download Resume
           </a>
