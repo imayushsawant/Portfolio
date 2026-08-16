@@ -43,7 +43,7 @@ export default function Education() {
               <span>📅 2024 – 2028</span>
               <span>
                 🎯 CGPA:{' '}
-                <strong style={{ color: 'var(--text)' }}>8.89</strong>
+                <strong style={{ color: 'var(--text)' }}>8.77</strong>
               </span>
             </div>
           </div>

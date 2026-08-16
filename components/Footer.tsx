@@ -54,7 +54,7 @@ export default function Footer() {
                   style={{
                     width: 15,
                     height: 15,
-                    backgroundColor: 'var(--accent)',
+                    backgroundColor: 'var(--text-dim)',
                     maskImage: `url(${iconPath})`,
                     maskRepeat: 'no-repeat',
                     maskPosition: 'center',

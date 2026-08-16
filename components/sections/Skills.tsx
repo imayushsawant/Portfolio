@@ -4,19 +4,19 @@ import SectionReveal from '@/components/SectionReveal'
 
 const SKILL_GROUPS = [
   {
-    category: 'Frontend',
+    category: 'Frontend & UI',
     emoji: '🎨',
-    skills: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'shadcn/ui'],
+    skills: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Recharts', 'Leaflet', 'HTML5', 'CSS3'],
   },
   {
-    category: 'Backend',
+    category: 'Backend & Systems',
     emoji: '⚙️',
-    skills: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'Drizzle ORM', 'Mongoose', 'Bun'],
+    skills: ['Node.js', 'Express.js', 'Socket.IO', 'Apache Kafka', 'Redis', 'PostgreSQL', 'Prisma ORM', 'Drizzle ORM'],
   },
   {
-    category: 'Tools & DevOps',
+    category: 'Tools, Auth & Cloud',
     emoji: '🛠',
-    skills: ['Git', 'Docker', 'Postman', 'npm', 'Supabase'],
+    skills: ['Git', 'Docker', 'Better Auth', 'Cloudflare R2', 'Postman', 'npm'],
   },
 ]
 

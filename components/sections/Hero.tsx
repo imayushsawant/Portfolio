@@ -6,7 +6,6 @@ import { Github, Linkedin, Twitter, ArrowDown, Download, type LucideIcon } from 
 
 const ROLES = [
   'Full Stack Developer',
-  'MERN Engineer',
   'System Architect',
   'Problem Solver',
 ]

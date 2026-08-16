@@ -8,7 +8,7 @@ import { Dumbbell, MapPin, Code2, Zap } from 'lucide-react'
 const STATS_BASE = [
   { label: 'Projects Built', value: '5+' },
   { label: 'Technologies', value: '15+' },
-  { label: 'CGPA', value: '8.89' },
+  { label: 'CGPA', value: '8.77' },
 ]
 
 const CYCLING_OPTIONS = [
@@ -64,9 +64,9 @@ export default function About() {
 
           <SectionReveal delay={0.2}>
             <p className="text-base leading-relaxed mb-6" style={{ color: 'var(--text-dim)' }}>
-              Full-Stack MERN Developer building high-performance, utility-driven web
-              applications. I care deeply about developer experience, clean architecture,
-              and shipping things that work reliably at scale.
+              Full-Stack Software Engineer building high-performance, real-time web
+              applications and distributed systems. I care deeply about developer experience,
+              event-driven architecture, and shipping production-ready systems that scale reliably.
             </p>
             <p className="text-base leading-relaxed mb-8" style={{ color: 'var(--text-dim)' }}>
               When I&apos;m not at my keyboard, I&apos;m powerlifting or travelling.
