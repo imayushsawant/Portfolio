@@ -1,52 +1,28 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
-        display: ['var(--font-display)', 'serif'],
-        body: ['var(--font-body)', 'sans-serif'],
-        mono: ['var(--font-mono)', 'monospace'],
+        mono: ['var(--font-mono)', 'JetBrains Mono', 'monospace'],
+        body: ['var(--font-body)', 'Inter', 'sans-serif'],
+        script: ['var(--font-script)', 'Caveat', 'cursive'],
       },
       colors: {
-        // Dark theme
-        'night': '#080b10',
-        'night-2': '#0d1117',
-        'night-3': '#161b22',
-        'night-4': '#21262d',
-        'dim': '#8b949e',
-        'ice': '#c9d1d9',
-        'snow': '#f0f6fc',
-        // Accent
-        'ember': '#ff6b35',
-        'ember-dim': '#ff6b3533',
-        'volt': '#39d353',
-        'sky': '#58a6ff',
+        'surface': '#000000',
+        'surface-2': '#050505',
+        'surface-3': '#0a0a0a',
+        'surface-4': '#111111',
+        'dim': '#666666',
+        'muted': '#444444',
+        'subtle': '#e0e0e0',
+        'sky-accent': '#7dd3fc',
       },
-      animation: {
-        'float': 'float 6s ease-in-out infinite',
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'scan': 'scan 3s linear infinite',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
-        scan: {
-          '0%': { top: '0%' },
-          '100%': { top: '100%' },
-        }
-      },
-      backgroundImage: {
-        'grid-pattern': "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
-        'grid-pattern-light': "linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px)",
-      }
     },
   },
   plugins: [],

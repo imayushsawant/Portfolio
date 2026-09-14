@@ -1,0 +1,11 @@
+<svg viewBox="0 0 821 821" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="821" height="821" fill="#000000" />
+  <g transform="translate(0, 134)">
+    <path fill="#ffffff" stroke="#ffffff" stroke-width="1" d="M 234 41 L 299.5 41 L 300 42.5 L 429 424.5 L 433.5 434 L 531 260.5 L 411 48.5 L 408 41 L 470.5 41 L 472 42.5 L 524 142.5 L 568.5 224 L 572 222.5 L 597 170.5 L 664.5 41 L 723.5 41 L 724 42.5 L 602 260.5 L 601 264.5 L 733 497 L 670.5 497 L 669 495.5 L 563.5 300 L 560 301.5 L 525 374.5 L 459 497 L 393.5 497 L 392 495.5 L 354 370.5 L 348.5 357 L 182.5 357 L 182 359.5 L 139 497 L 80.5 497 L 80 495.5 L 234 41 Z M 264 87 L 240 175 L 197 310 L 198 311 L 335 311 L 296 188 L 268 89 L 264 87 Z " />
+    <path fill="#ffffff" opacity="0.85" d="M 234.5 40 L 300 40.5 L 234.5 41 L 234.5 40 Z " />
+    <path fill="#ffffff" opacity="0.85" d="M 407 40 L 471 40.5 L 408.5 41 L 407.5 42 L 407 40 Z " />
+    <path fill="#ffffff" opacity="0.85" d="M 664.5 40 L 724.5 40 L 725 41.5 L 723.5 41 L 664.5 41 L 664.5 40 Z " />
+    <path fill="#ffffff" opacity="0.85" d="M 567.5 222 L 571 223.5 L 568.5 224 L 567.5 222 Z " />
+    <path fill="#ffffff" opacity="0.85" d="M 182.5 357 L 348.5 357 L 350 358.5 L 348.5 358 L 182.5 358 L 182.5 357 Z " />
+  </g>
+</svg>
