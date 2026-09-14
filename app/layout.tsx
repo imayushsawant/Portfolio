@@ -26,8 +26,8 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   title: 'Ayush Sawant',
   description:
-    'Full-Stack Developer building high-performance, utility-driven web applications. Focused on React, Next.js, TypeScript, and scalable system architecture.',
-  keywords: ['Ayush Sawant', 'Full Stack Developer', 'MERN', 'React', 'Next.js', 'TypeScript', 'Portfolio'],
+    'Full-Stack Software Engineer building high-performance, real-time web applications and distributed systems. Focused on scalable system architecture.',
+  keywords: ['Ayush Sawant', 'Full Stack Developer', 'React', 'Next.js', 'TypeScript', 'Node.js', 'Socket.IO', 'Kafka', 'Redis', 'Portfolio'],
   authors: [{ name: 'Ayush Sawant' }],
   openGraph: {
     title: 'Ayush Sawant',
