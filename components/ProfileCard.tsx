@@ -16,7 +16,7 @@ export default function ProfileCard() {
       >
         <div className="avatar-wrapper">
           <Image
-            src="/avatar.png"
+            src="/avatar.jpeg"
             alt="Ayush Sawant"
             width={88}
             height={88}
