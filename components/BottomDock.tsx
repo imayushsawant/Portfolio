@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Home, FileText, Github, Linkedin, Download, Mail } from 'lucide-react'
+import { Home, FileText, Github, Linkedin, Download, BookOpen } from 'lucide-react'
 
 type DockItem = {
   label: string
@@ -33,6 +33,11 @@ const DOCK_ITEMS: DockItem[] = [
     icon: <FileText size={20} />,
   },
   {
+    label: 'Blog',
+    href: 'https://blog.ayushsawant.dev',
+    icon: <BookOpen size={20} />,
+  },
+  {
     label: 'GitHub',
     href: 'https://github.com/imayushsawant',
     icon: <Github size={20} />,
@@ -52,15 +57,6 @@ const DOCK_ITEMS: DockItem[] = [
     href: '/resume.pdf',
     icon: <Download size={20} />,
     download: true,
-  },
-  {
-    label: 'Email',
-    href: '#contact',
-    icon: <Mail size={20} />,
-    onClick: () => {
-      const el = document.getElementById('contact')
-      if (el) el.scrollIntoView({ behavior: 'smooth' })
-    },
   },
 ]
 

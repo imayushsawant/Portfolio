@@ -6,6 +6,7 @@ import ProfileCard from '@/components/ProfileCard'
 import TechStack from '@/components/TechStack'
 import Projects from '@/components/Projects'
 import ContactForm from '@/components/ContactForm'
+import FooterLinks from '@/components/FooterLinks'
 import BottomDock from '@/components/BottomDock'
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
         <TechStack />
         <Projects />
         <ContactForm />
+        <FooterLinks />
       </div>
       <BottomDock />
     </motion.div>
