@@ -22,7 +22,6 @@ export default function ProfileCard() {
             height={88}
             priority
           />
-          <div className="status-dot" />
         </div>
         <div>
           <h1 className="profile-name">Ayush Sawant</h1>
