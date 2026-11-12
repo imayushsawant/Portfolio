@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import TopBar from '@/components/TopBar'
 import ProfileCard from '@/components/ProfileCard'
+import GithubContributions from '@/components/GithubContributions'
 import TechStack from '@/components/TechStack'
 import Projects from '@/components/Projects'
 import ContactForm from '@/components/ContactForm'
@@ -19,6 +20,7 @@ export default function Home() {
       <TopBar />
       <div className="page-container">
         <ProfileCard />
+        <GithubContributions />
         <TechStack />
         <Projects />
         <ContactForm />
