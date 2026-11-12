@@ -142,7 +142,7 @@ export default function GithubContributions() {
         </div>
 
         {/* Contribution Calendar */}
-        <div className="overflow-x-auto pb-1 flex justify-center">
+        <div className="w-full flex justify-center overflow-hidden">
           {mounted && !loading && !hasError && contributions.length > 0 ? (
             <ActivityCalendar
               data={contributions}

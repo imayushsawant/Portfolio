@@ -430,8 +430,30 @@ html.light .dock-icon:hover {
 
 /* ─── GitHub Contributions ──────────────────────────────── */
 .react-activity-calendar {
+  width: 100% !important;
+  max-width: 100% !important;
   color: var(--text-dim);
   font-family: var(--font-mono), monospace !important;
+}
+
+.react-activity-calendar__scroll-container {
+  overflow: visible !important;
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+  max-width: 100% !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.react-activity-calendar__scroll-container::-webkit-scrollbar {
+  display: none !important;
+}
+
+.react-activity-calendar svg {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
 }
 
 .react-activity-calendar svg text {
@@ -443,7 +465,8 @@ html.light .dock-icon:hover {
   font-size: 0.75rem !important;
   color: var(--text-dim) !important;
   font-family: var(--font-mono), monospace !important;
-  margin-top: 10px !important;
+  margin-top: 12px !important;
+  width: 100% !important;
 }
 
 .react-activity-calendar__tooltip {
