@@ -111,7 +111,7 @@ export default function GithubContributions() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.35 }}
-        className="rounded-xl border border-[var(--border)] bg-[var(--bg-elevated)] p-4 sm:p-6 transition-colors duration-300"
+        className="rounded-xl border border-[var(--border)] bg-[var(--bg-elevated)] p-4 sm:p-6 transition-colors duration-300 w-full"
       >
         {/* Header */}
         <div className="flex items-center justify-between pb-4 mb-4 border-b border-[var(--border)]">
@@ -142,13 +142,13 @@ export default function GithubContributions() {
         </div>
 
         {/* Contribution Calendar */}
-        <div className="w-full flex justify-center overflow-hidden">
+        <div className="w-full flex justify-center">
           {mounted && !loading && !hasError && contributions.length > 0 ? (
             <ActivityCalendar
               data={contributions}
               colorScheme={colorScheme}
               theme={GITHUB_THEME}
-              blockSize={11}
+              blockSize={12}
               blockMargin={3}
               blockRadius={2}
               fontSize={12}
